@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trattoria Bella Vista | Italian Restaurant</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf3;
+    color: #29251f;
+}
+
+header {
+    background: #29251f;
+    color: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #e9b96e;
+    font-family: Georgia, serif;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #e9b96e;
+}
+
+.hero {
+    min-height: 580px;
+    background:
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1800")
+    center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #b77b35;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background: #925c22;
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #714321;
+}
+
+.section-title p {
+    color: #777;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
+}
+
+.food-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+    transition: .3s;
+}
+
+.food-card:hover {
+    transform: translateY(-7px);
+}
+
+.food-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h3 {
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #a56829;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.offer {
+    background: #49321f;
+    color: white;
+    text-align: center;
+}
+
+.offer h2 {
+    font-size: 38px;
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+    color: #e9b96e;
+}
+
+.offer p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.review-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
+}
+
+.review {
+    background: white;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.07);
+}
+
+.stars {
+    color: #e5a32b;
+    margin-bottom: 15px;
+}
+
+.review p {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.contact {
+    background: #f1e8da;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 35px;
+}
+
+.contact-info h3 {
+    color: #714321;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin-bottom: 12px;
+    line-height: 1.7;
+}
+
+.reservation {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.reservation input,
+.reservation select,
+.reservation textarea {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.reservation textarea {
+    resize: vertical;
+}
+
+footer {
+    background: #29251f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: #e9b96e;
+}
+
+@media(max-width:700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    nav a {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 55px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Bella Vista 🍝</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#offers">Offers</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+    <div>
+        <h1>Welcome to Bella Vista</h1>
+        <p>Authentic Italian Flavours, Made with Love.</p>
+        <a href="#menu" class="btn">Explore Our Menu</a>
+        <a href="#contact" class="btn">Book a Table</a>
+    </div>
+</section>
+
+<!-- FOOD MENU -->
+<section id="menu">
+    <div class="section-title">
+        <h2>Our Delicious Menu</h2>
+        <p>Discover the taste of authentic Italian cuisine.</p>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=700" alt="Italian pasta">
+            <div class="food-info">
+                <h3>Italian Pasta</h3>
+                <p>Fresh pasta with creamy Italian sauce.</p>
+                <span class="price">₹299</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=700" alt="Pizza">
+            <div class="food-info">
+                <h3>Margherita Pizza</h3>
+                <p>Classic pizza with cheese and fresh basil.</p>
+                <span class="price">₹349</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=700" alt="Dessert">
+            <div class="food-info">
+                <h3>Italian Dessert</h3>
+                <p>Sweet and delicious dessert for everyone.</p>
+                <span class="price">₹199</span>
+            </div>
+        </div>
+
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=700" alt="Fresh drink">
+            <div class="food-info">
+                <h3>Fresh Mocktail</h3>
+                <p>Refreshing fruit drink with fresh ingredients.</p>
+                <span class="price">₹149</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SPECIAL OFFERS -->
+<section class="offer" id="offers">
+    <h2>Special Offers!</h2>
+    <p>
+        Enjoy 20% OFF on your first family dining experience.<br>
+        Delicious food, unforgettable moments!
+    </p>
+    <a href="#contact" class="btn">Reserve Your Table</a>
+</section>
+
+<!-- CUSTOMER REVIEWS -->
+<section id="reviews">
+    <div class="section-title">
+        <h2>What Our Customers Say</h2>
+        <p>Our customers make every experience special.</p>
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Amazing food and wonderful atmosphere. The pasta was delicious!"</p>
+            <h3>Rahul Sharma</h3>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"Beautiful restaurant with excellent service. Highly recommended!"</p>
+            <h3>Priya Reddy</h3>
+        </div>
+
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>"One of the best dining experiences. Loved the pizza and desserts!"</p>
+            <h3>Arjun Kumar</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT AND RESERVATION -->
+<section class="contact" id="contact">
+    <div class="section-title">
+        <h2>Visit Our Restaurant</h2>
+        <p>We would love to welcome you!</p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>📍 Address: Vijayawada, Andhra Pradesh, India</p>
+            <p>📞 Phone: +91 98765 43210</p>
+            <p>✉️ Email: hello@bellavista.example</p>
+
+            <h3>Opening Hours</h3>
+            <p>Monday – Friday: 11 AM – 10 PM</p>
+            <p>Saturday – Sunday: 10 AM – 11 PM</p>
+
+            <h3>Our Location</h3>
+            <a href="https://www.google.com/maps/search/?api=1&query=restaurants+Vijayawada"
+               target="_blank" class="btn">
+               View on Google Maps
+            </a>
+        </div>
+
+        <div class="reservation">
+            <h3>Book a Table</h3>
+            <br>
+
+            <form id="bookingForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="date" required>
+
+                <select required>
+                    <option value="">Number of Guests</option>
+                    <option>1 Person</option>
+                    <option>2 People</option>
+                    <option>3 People</option>
+                    <option>4 People</option>
+                    <option>5+ People</option>
+                </select>
+
+                <textarea placeholder="Special Requests" rows="3"></textarea>
+
+                <button type="submit" class="btn">
+                    Confirm Reservation
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 <span>Trattoria Bella Vista</span>. All Rights Reserved.</p>
+    <p>Made with ❤️ for Italian Food Lovers.</p>
+</footer>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    alert("Thank you! Your reservation request has been received.");
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>
